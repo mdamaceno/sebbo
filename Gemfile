@@ -45,3 +45,4 @@ end
 
 gem 'liquid-rails'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.3'
