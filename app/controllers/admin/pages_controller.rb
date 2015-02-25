@@ -1,5 +1,5 @@
 module Admin
-  class PageController < ApplicationController
+  class PagesController < ApplicationController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     def index
