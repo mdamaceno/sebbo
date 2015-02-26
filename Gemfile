@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'liquid-rails'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'simple_form'
+gem 'bootstrap-wysihtml5-rails'

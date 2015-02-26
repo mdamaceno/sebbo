@@ -3,7 +3,7 @@ module Admin
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     def index
-
+      @pages = Page.all
     end
 
     def show
@@ -53,7 +53,7 @@ module Admin
     private
 
     def set_page
-      @page = Album.find(params[:id])
+      @page = Page.find_by_slug!(params[:id])
     end
 
     def page_params
