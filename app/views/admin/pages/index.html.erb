@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Páginas</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Data de criação</th>
+        <th width="30"></th>
+        <th width="30"></th>
+        <th width="30"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pages.each do |page| %>
+        <tr>
+          <td><%= page.id %></td>
+          <td><%= page.title %></td>
+          <td><%= page.created_at %></td>
+          <td><%= link_to "Visualizar", admin_page_path(page), class: "btn btn-primary btn-xs" %></td>
+          <td><%= link_to "Editar", edit_admin_page_path(page), class: "btn btn-primary btn-xs" %></td>
+          <td><%= link_to "Excluir", admin_page_path(page), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Excluir página?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<p><%= link_to "Nova página", new_admin_page_path, class: "btn btn-success" %></p>

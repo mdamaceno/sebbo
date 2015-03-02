@@ -10,12 +10,5 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-wysihtml5
-//= require turbolinks
+//= require ckeditor-jquery
 //= require_tree .
-
-$(document).on('page:load', function(){
-  window['rangy'].initialized = false
-})
