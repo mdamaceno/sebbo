@@ -1,6 +1,7 @@
 module Admin
   class PagesController < ApplicationController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
 
     def index
       @pages = Page.all
