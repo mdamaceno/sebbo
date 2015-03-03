@@ -3,17 +3,17 @@ var app = angular.module('adminModule', []);
 app.controller('indexPageCtrl', function($scope, $http, $location) {
   var request = {
     method: 'get',
-    url: '/admin/pages.json'
-  }
+    url: '/api/pages.json'
+  };
   $http(request)
     .success(function(data) {
-      $scope.pages = data.pages;
+      $scope.pages = data;
       console.log(data);
     });
 
     $scope.edit = function(pageId){
       window.location.href="/admin/pages/" + pageId + "/edit";
-    }
+    };
 
     $scope.remove = function(pageId){
       var r = confirm("Deseja realmente excluir esta página?");
@@ -22,7 +22,7 @@ app.controller('indexPageCtrl', function($scope, $http, $location) {
           type: 'json',
           method: 'delete',
           url: '/admin/pages/' + pageId
-        }
+        };
         $http(reqRemove)
         .success(function(data, status){
           console.log(data);
@@ -32,5 +32,5 @@ app.controller('indexPageCtrl', function($scope, $http, $location) {
           console.log(status);
         });
       }
-    }
+    };
 });
