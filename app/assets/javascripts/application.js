@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require angular
+//= require angular-resource
 //= require ckeditor-jquery
 //= require_tree .

@@ -46,8 +46,8 @@ module Admin
     def destroy
       @page.destroy
       respond_to do |format|
-        format.html { redirect_to admin_pages_url, notice: 'Album was successfully destroyed.' }
-        format.json { head :no_content }
+        format.html { head :no_content, notice: 'Album was successfully destroyed.', location: @pages }
+        # format.json { head :no_content }
       end
     end
 

@@ -1,5 +1,10 @@
-<div class="panel panel-default">
-  <div class="panel-heading">Páginas</div>
+<div class="panel panel-default" ng-controller="indexPageCtrl">
+  <div class="panel-heading">Páginas | <%= link_to "Nova página", new_admin_page_path, class: "btn btn-xs btn-success" %></div>
+  <div class="panel-heading">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Filtro" ng-model="search">
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -7,22 +12,17 @@
         <th>Título</th>
         <th>Data de criação</th>
         <th width="30"></th>
-        <th width="30"></th>
-        <th width="30"></th>
       </tr>
     </thead>
     <tbody>
-      <% @pages.each do |page| %>
-        <tr>
-          <td><%= page.id %></td>
-          <td><%= page.title %></td>
-          <td><%= page.created_at %></td>
-          <td><%= link_to "Visualizar", admin_page_path(page), class: "btn btn-primary btn-xs" %></td>
-          <td><%= link_to "Editar", edit_admin_page_path(page), class: "btn btn-primary btn-xs" %></td>
-          <td><%= link_to "Excluir", admin_page_path(page), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Excluir página?" } %></td>
-        </tr>
-      <% end %>
+      <tr ng-repeat="page in pages | filter: search">
+        <td>{{page.id}}</td>
+        <td>{{page.title}}</td>
+        <td>{{page.created_at | date: 'dd/MM/yyyy'}}</td>
+        <td ng-click="edit(page.slug)"><button class="btn btn-primary btn-xs">Editar</button></td>
+        <td ng-click="remove(page.slug)"><button class="btn btn-danger btn-xs">Delete</button></td>
+      </tr>
     </tbody>
   </table>
 </div>
-<p><%= link_to "Nova página", new_admin_page_path, class: "btn btn-success" %></p>
+<p><%= link_to "Nova página", new_admin_page_path, class: "btn btn-sm btn-success" %></p>

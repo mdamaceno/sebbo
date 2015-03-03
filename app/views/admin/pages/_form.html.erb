@@ -2,5 +2,5 @@
   <%= f.input :title, label: "Título", input_html: { class: "form-control" } %>
   <%= f.input :body, label: "Texto", input_html: { class: "form-control ckeditor" } %> <br/>
   <%= f.button :submit, "Salvar", class: "btn btn-success btn-sm" %>
-  <a onclick="history.back(-1)", class="text-danger" style="cursor:pointer">Cancelar</a>
+  <%= link_to "Cancelar", admin_pages_path, class: "text-danger" %>
 <% end %>
