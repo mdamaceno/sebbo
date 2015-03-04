@@ -4,14 +4,19 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pages
+    resources :users
   end
 
-  namespace :api do
+  namespace :api, default: { format: :json } do
     resources :pages
+    resources :users
   end
 
-  resources :pages, only: [:index, :show]
-  
+  with_options only: [:index, :show] do |for_users|
+    for_users.resources :pages
+    for_users.resources :users
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

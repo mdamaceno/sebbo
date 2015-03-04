@@ -15,12 +15,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="page in pages | filter: search">
+      <tr ng-repeat="page in pages | filter: search" ng-cloak>
         <td>{{page.id}}</td>
         <td>{{page.title}}</td>
         <td>{{page.created_at | date: 'dd/MM/yyyy'}}</td>
-        <td ng-click="edit(page.slug)"><button class="btn btn-primary btn-xs">Editar</button></td>
-        <td ng-click="remove(page.slug)"><button class="btn btn-danger btn-xs">Delete</button></td>
+        <td ng-click="edit(page.id)"><button class="btn btn-primary btn-xs">Editar</button></td>
+        <td ng-click="remove(page.id, $index)"><button class="btn btn-danger btn-xs">Delete</button></td>
       </tr>
     </tbody>
   </table>

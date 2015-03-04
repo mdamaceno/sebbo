@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Editando usuário</div>
+  <div class="panel-body">
+    <%= simple_form_for([:admin, @user]) do |f| %>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-6">
+            <%= f.input :name, label: "Nome", input_html: { class: "form-control" } %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :email, label: "Email", input_html: { class: "form-control-static", 'disabled' => 'disabled' } %>
+          </div>
+        </div>
+      </div>
+      <%= f.button :submit, "Salvar", class: "btn btn-success btn-sm" %>
+      <%= link_to "Cancelar", admin_users_path, class: "text-danger" %>
+    <% end %>
+  </div>
+</div>

@@ -3,7 +3,6 @@ module Admin
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     def index
-      render :index
     end
 
     def show
@@ -42,18 +41,10 @@ module Admin
       end
     end
 
-    def destroy
-      @page.destroy
-      respond_to do |format|
-        format.html { head :no_content, notice: 'Album was successfully destroyed.', location: @pages }
-        # format.json { head :no_content }
-      end
-    end
-
     private
 
     def set_page
-      @page = Page.find_by_slug!(params[:id])
+      @page = Page.find(params[:id])
     end
 
     def page_params

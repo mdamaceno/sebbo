@@ -1,0 +1,7 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%= @page.title %></div>
+  <div class="panel-body">
+    <%= raw @page.body %>
+  </div>
+</div>
+<p><%= link_to "Editar", edit_admin_page_path(@page), class: "btn btn-primary btn-sm" %> <%= link_to "Voltar", admin_pages_path(@page), class: "text-danger" %></p>
