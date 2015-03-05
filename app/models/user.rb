@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   # Authorization over the pages
   enum role: { "Usuário" => 0, "Administrador" => 1 }
+  enum gender: { "Masculino" => 0, "Feminino" => 1, "Outro" => 2 }
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role

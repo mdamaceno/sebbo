@@ -71,6 +71,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    enum_help (0.0.12)
     erubis (2.7.0)
     execjs (2.3.0)
     globalid (0.3.3)
@@ -182,6 +183,7 @@ DEPENDENCIES
   ckeditor_rails
   coffee-rails (~> 4.1.0)
   devise
+  enum_help
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
