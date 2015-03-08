@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  # Relationships
+  has_many :addresses
+  accepts_nested_attributes_for :addresses
+
+  # Validations
+  validates_uniqueness_of :doc
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

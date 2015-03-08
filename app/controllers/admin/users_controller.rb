@@ -36,7 +36,7 @@ module Admin
     def update
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to [:admin, @user], notice: 'Usuário atualizado com sucesso.' }
+          format.html { redirect_to admin_users_path, notice: 'Usuário atualizado com sucesso.' }
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :edit }
@@ -61,7 +61,7 @@ module Admin
 
     def user_params
       params.require(:user).permit(:email, :password, :role, :gender, :name,
-                                   :address, :contact1, :contact2, :doc, :avatar, :description)
+                                   :address, :contact1, :contact2, :doc, :avatar, :description, addresses_attributes: Address.attribute_names.collect { |att| att.to_sym })
     end
 
   end
