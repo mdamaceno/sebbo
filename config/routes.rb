@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
   devise_for :users
 
   namespace :admin do
+    root "pages#index"
     resources :pages
     resources :users
   end
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
 
   with_options only: [:index, :show] do |for_users|
     for_users.resources :pages
-    for_users.resources :users
+    # for_users.resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

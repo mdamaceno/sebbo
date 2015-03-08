@@ -1,6 +1,7 @@
 module Admin
   class PagesController < Admin::ApplicationController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
+    before_action :check_permission
 
     def index
     end

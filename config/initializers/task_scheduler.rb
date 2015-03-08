@@ -11,9 +11,9 @@ scheduler.cron '00 * * * *' do
     password = "#{year}#{month}#{day}#{hour}#{year + hour}"
 
     users.each do |user|
-      old_password = user.password
+      old_password = user.encrypted_password
       user.update_attribute(:password, password)
-      if old_password != user.password
+      if old_password != user.encrypted_password
         puts "Senha do usuário com login #{user.email} foi alterada com sucesso."
       else
         puts "Não foi possível alterar a senha do usuário com login #{user.email}"

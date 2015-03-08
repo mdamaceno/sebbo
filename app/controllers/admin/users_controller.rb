@@ -1,6 +1,7 @@
 module Admin
   class UsersController < Admin::ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :check_permission, except: [:edit, :update, :destroy]
 
     def index
     end
@@ -13,6 +14,9 @@ module Admin
     end
 
     def edit
+      unless current_user.role == "Administrador" || @user.id == current_user.id
+        redirect_to edit_admin_user_path(current_user), notice: "Você não possui permissão para este acesso."
+      end
     end
 
     def create
@@ -44,12 +48,20 @@ module Admin
     private
 
     def set_user
-      @user = User.find(params[:id])
+      if User.find_by_id(params[:id])
+        @user ||= User.find_by_id(params[:id])
+      else
+        unless current_user.role == "Administrador"
+          redirect_to edit_admin_user_path(current_user), notice: "Você não possui permissão para este acesso."
+        else
+          redirect_to edit_admin_user_path(current_user), notice: "Não existe usuário com o ID especificado."
+        end
+      end
     end
 
     def user_params
       params.require(:user).permit(:email, :password, :role, :gender, :name,
-        :address, :contact1, :contact2, :doc, :avatar, :description)
+                                   :address, :contact1, :contact2, :doc, :avatar, :description)
     end
 
   end

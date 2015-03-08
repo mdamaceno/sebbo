@@ -12,6 +12,8 @@
 //
 //= require angular
 //= require angular-resource
+//= require jquery
+//= require jquery_ujs
 //= require ckeditor-jquery
 //= require_tree ./module
 //= require_tree ./controllers
