@@ -34,6 +34,7 @@ gem 'rails_12factor'
 
 group :development do
   gem 'mysql2'
+  gem 'meta_request'
 end
 
 # group :production do
