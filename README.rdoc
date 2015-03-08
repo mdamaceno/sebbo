@@ -1,28 +1,21 @@
-== README
+== Sobre
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um sistema de compra e venda de livros usados feito especialmente para a matéria de Comércio Eletrônico ministrada pelo professor Tadeu Moreira de Classe do curso Sistemas para Internet no Instituto Vianna Júnior em Juiz de Fora - MG.
 
-Things you may want to cover:
+O sistema utiliza as seguintes ferramentas:
 
-* Ruby version
+* Ruby 2.1.5
+* Rails 4.2.0
+* MySQL
+* AngularJS
 
-* System dependencies
+== Imagens do Projeto
 
-* Configuration
+Todas as imagens do projeto se encontram na pasta "/project_images".
 
-* Database creation
+== Autores
 
-* Database initialization
+O Sebbo possui os seguintes autores:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Marco Damaceno
+* Eduardo de Carvalho Tavares
