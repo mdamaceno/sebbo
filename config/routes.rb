@@ -7,16 +7,20 @@ Rails.application.routes.draw do
     root "pages#index"
     resources :pages
     resources :users
+    resources :categories
+    resources :products
   end
 
   namespace :api, default: { format: :json } do
     resources :pages
     resources :users
+    resources :categories
+    resources :products
   end
 
   with_options only: [:index, :show] do |for_users|
     for_users.resources :pages
-    # for_users.resources :users
+    for_users.resources :products
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
