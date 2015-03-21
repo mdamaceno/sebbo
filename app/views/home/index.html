@@ -2,20 +2,32 @@
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
-        <label for="productsFilter">Filtro</label>
-        <input type="text" id="productsFilter" class="form-control" ng-model="productsFilter">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="productsFilter">Filtro</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <input type="text" id="productsFilter" class="form-control" ng-model="productsFilter">
+          </div>
+          <div class="col-md-2">
+            <a href class="btn btn-primary">Buscar</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div ng-repeat="product in products | filter: productsFilter">
-      <div class="col-md-4">
-        <p><img src="{{product.image.image.url}}" alt="{{product.name}}"/></p>
+      <div class="col-md-3">
+        <p><img ng-src="{{product.image.image.url}}" alt="{{product.name}}"/></p>
         <p>Nome: {{product.name}}</p>
         <p>Preço: {{product.price | currency}}</p>
         <p>Quantidade: {{product.quantity}}</p>
         <span ng-bind-html>{{product.description}}</span>
         <p>Vendedor: {{product.user}}</p>
+        <p><a href class="btn btn-primary btn-sm">Ver detalhes</a></p>
       </div>
     </div>
   </div>
