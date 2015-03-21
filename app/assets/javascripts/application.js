@@ -16,8 +16,10 @@
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
 //= require angular-flash/dist/angular-flash
+//= require angular-i18n/angular-locale_pt-br
 //= require angular-rails-templates
 //= require ckeditor-jquery
 //= require_tree ./module
-//= require_tree ./controllers
+//= require_tree ./controllers/admin
+//= require_tree ./controllers/client
 //= require_tree .

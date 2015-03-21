@@ -4,6 +4,7 @@ module Admin
     before_action :check_permission, except: [:edit, :update, :destroy]
 
     def index
+      @users = User.all
     end
 
     def show

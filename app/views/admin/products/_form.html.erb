@@ -10,8 +10,15 @@
     <div class="col-md-4">
       <%= f.association :category, label: "Categoria" %>
     </div>
+    <% if current_user.role == "Administrador" %>
     <div class="col-md-4">
-      <%= f.association :user, label: "Dono do anúncio" %>
+      <%= f.association :user, label: "Anunciante" %>
+    </div>
+    <% else %>
+      <%= f.input :user, as: :hidden, input_html: { value: current_user.id } %>
+    <% end %>
+    <div class="col-md-4">
+      <%= f.input :image, label: "Imagem" %>
     </div>
     <div class="col-md-2">
       <%= f.input :sold, label: "Vendido" %>

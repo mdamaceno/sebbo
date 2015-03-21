@@ -4,14 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    root "pages#index"
-    resources :pages
-    resources :users
-    resources :categories
-    resources :products
-  end
-
-  namespace :api, default: { format: :json } do
+    root "home#index"
     resources :pages
     resources :users
     resources :categories

@@ -1,0 +1,12 @@
+<div class="row" ng-controller="indexClientProductCtrl">
+  <div ng-repeat="product in products">
+    <div class="col-md-4">
+      <p><img src="{{product.image.image.url}}" alt="{{product.name}}"/></p>
+      <p>Nome: {{product.name}}</p>
+      <p>Preço: {{product.price | currency}}</p>
+      <p>Quantidade: {{product.quantity}}</p>
+      <span ng-bind-html>{{product.description}}</span>
+      <p>Vendedor: {{product.user}}</p>
+    </div>
+  </div>
+</div>

@@ -52,6 +52,11 @@ GEM
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
     callsite (0.0.11)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     ckeditor_rails (4.4.6)
       railties (>= 3.0)
     coffee-rails (4.1.0)
@@ -144,6 +149,7 @@ GEM
       json (~> 1.4)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
+    rmagick (2.13.4)
     rufus-scheduler (3.0.9)
       tzinfo
     sass (3.4.12)
@@ -193,6 +199,7 @@ DEPENDENCIES
   angularjs-rails
   bower-rails
   byebug
+  carrierwave
   ckeditor_rails
   coffee-rails
   devise
@@ -206,6 +213,7 @@ DEPENDENCIES
   rails_12factor
   rails_serve_static_assets
   rails_stdout_logging
+  rmagick
   rufus-scheduler
   sass
   sass-rails

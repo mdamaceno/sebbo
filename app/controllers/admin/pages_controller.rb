@@ -4,6 +4,7 @@ module Admin
     before_action :check_permission
 
     def index
+      @pages = Page.all
     end
 
     def show

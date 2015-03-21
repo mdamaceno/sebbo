@@ -1,10 +1,14 @@
 module Admin
   class ProductsController < Admin::ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
-    before_action :check_permission
+    # before_action :check_permission, except: [:new, :edit, :create, :update, :destroy]
 
     def index
-      @products = Product.joins(:category, :user)
+      if current_user.role == "Administrador"
+        @products = Product.all
+      else
+        @products = Product.where(user_id: current_user.id)
+      end
     end
 
     def show
@@ -22,7 +26,7 @@ module Admin
 
       respond_to do |format|
         if @product.save
-          format.html { redirect_to [:admin, @product], notice: "Produto criado com sucesso." }
+          format.html { redirect_to admin_products_path, notice: "Produto criado com sucesso." }
           format.json { render :show, status: :created, location: @product }
         else
           format.html { render :new }
@@ -34,7 +38,7 @@ module Admin
     def update
       respond_to do |format|
         if @product.update(product_params)
-          format.html { redirect_to [:admin, @product], notice: 'Produto atualizado com sucesso.' }
+          format.html { redirect_to admin_products_path, notice: 'Produto atualizado com sucesso.' }
           format.json { render :show, status: :ok, location: @product }
         else
           format.html { render :edit }
@@ -54,7 +58,7 @@ module Admin
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :code, :slug,
+      params.require(:product).permit(:name, :description, :code, :slug, :image,
                                       :price, :sold, :quantity, :featured, :user_id, :category_id)
     end
 
