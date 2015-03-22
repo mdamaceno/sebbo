@@ -1,4 +1,4 @@
-<div ng-controller="showClientProductCtrl">
+<div ng-controller="showClientProductCtrl" ng-init="rating = star.rating + 3">
   <div class="row">
     <div class="col-md-6">
       <img ng-src="{{product.image.image.main.url}}" alt="{{product.name}}">
@@ -7,6 +7,14 @@
       <h1>{{product.name}}</h1>
       <p><label>Quantidade</label>: {{product.quantity}}</p>
       <p><label>Preço</label>: {{product.price | currency}}</p>
+      <div fundoo-rating rating-value="rating" max="5" on-rating-selected="saveRatingToServer(rating)"></div>
+      <p>
+        <span ng-if="rating == 1">Péssimo</span>
+        <span ng-if="rating == 2">Razoável</span>
+        <span ng-if="rating == 3">Regular</span>
+        <span ng-if="rating == 4">Bom</span>
+        <span ng-if="rating == 5">Ótimo</span>
+      </p>
       <label>Descrição</label>
       <div ng-bind-html="product.description"></div>
     </div>
