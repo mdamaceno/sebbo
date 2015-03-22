@@ -20,7 +20,7 @@ app.controller('indexAdminProductCtrl', function($scope, $http, $location) {
       var reqRemove = {
         type: 'json',
         method: 'delete',
-        url: '/api/products/' + productId
+        url: '/admin/products/' + productId
       };
       $http(reqRemove)
         .success(function(data, status) {

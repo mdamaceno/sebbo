@@ -15,7 +15,9 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
+//= require angular-sanitize/angular-sanitize
 //= require angular-flash/dist/angular-flash
+//= require angular-bootstrap/ui-bootstrap
 //= require angular-i18n/angular-locale_pt-br
 //= require angular-rails-templates
 //= require ckeditor-jquery

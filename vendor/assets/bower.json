@@ -8,6 +8,8 @@
     "bootstrap-sass-official": "latest",
     "angular-flash": "latest",
     "angular-currency-filter": "latest",
-    "angular-i18n": "latest"
+    "angular-i18n": "latest",
+    "angular-sanitize": "latest",
+    "angular-bootstrap": "latest"
   }
 }

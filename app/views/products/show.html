@@ -1,0 +1,14 @@
+<div ng-controller="showClientProductCtrl">
+  <div class="row">
+    <div class="col-md-6">
+      <img ng-src="{{product.image.image.main.url}}" alt="{{product.name}}">
+    </div>
+    <div class="col-md-6">
+      <h1>{{product.name}}</h1>
+      <p><label>Quantidade</label>: {{product.quantity}}</p>
+      <p><label>Preço</label>: {{product.price | currency}}</p>
+      <label>Descrição</label>
+      <div ng-bind-html="product.description"></div>
+    </div>
+  </div>
+</div>

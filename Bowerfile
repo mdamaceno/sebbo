@@ -7,4 +7,6 @@ asset 'angular-flash'
 asset 'angular-flash'
 asset 'angular-currency-filter'
 asset 'angular-i18n'
+asset 'angular-sanitize'
+asset 'angular-bootstrap'
 # vim: ft=ruby

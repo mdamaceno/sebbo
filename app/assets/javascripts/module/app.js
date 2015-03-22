@@ -1,2 +1,2 @@
 var app = angular.module('adminModule', []);
-var appClient = angular.module('clientModule', []);
+var appClient = angular.module('clientModule', ['ngSanitize']);

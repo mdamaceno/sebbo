@@ -11,3 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+/public/uploads
+/config/initializers/task_scheduler.rb

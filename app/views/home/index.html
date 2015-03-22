@@ -22,12 +22,10 @@
     <div ng-repeat="product in products | filter: productsFilter">
       <div class="col-md-3">
         <p><img ng-src="{{product.image.image.url}}" alt="{{product.name}}"/></p>
-        <p>Nome: {{product.name}}</p>
+        <p>Título: {{product.name}}</p>
         <p>Preço: {{product.price | currency}}</p>
         <p>Quantidade: {{product.quantity}}</p>
-        <span ng-bind-html>{{product.description}}</span>
-        <p>Vendedor: {{product.user}}</p>
-        <p><a href class="btn btn-primary btn-sm">Ver detalhes</a></p>
+        <p><a href ng-click="goto(product.id)" class="btn btn-primary btn-sm">Ver detalhes</a></p>
       </div>
     </div>
   </div>
