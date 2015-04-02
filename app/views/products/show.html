@@ -5,7 +5,10 @@
     </div>
     <div class="col-md-6">
       <h1>{{product.name}}</h1>
-      <p><label>Qtd</label>: {{product.quantity}}</p>
+      <p>
+        <label>Qtd:</label>
+        <span>{{product.quantity}}</span>
+      </p>
       <p><label>Preço</label>: {{product.price | currency}} / unidade</p>
       <div fundoo-rating rating-value="rating" max="5" on-rating-selected="saveRatingToServer(rating)"></div>
       <p>
@@ -18,8 +21,8 @@
       <label>Descrição</label>
       <div ng-bind-html="product.description"></div>
       <p>
-        <a href title="" class="btn btn-primary btn-success">Comprar</a>
-        <a href title="" class="btn btn-primary">Adicionar ao carrinho</a>
+        <a href class="btn btn-primary btn-success">Comprar</a>
+        <a href ng-click="addToCart(product.id, product.name, product.quantity)" class="btn btn-primary">Adicionar ao carrinho</a>
       </p>
     </div>
     <div class="col-md-12">
