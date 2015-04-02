@@ -19,7 +19,7 @@
 //= require angular-flash/dist/angular-flash
 //= require angular-bootstrap/ui-bootstrap
 //= require angular-i18n/angular-locale_pt-br
-//= require angular-rails-templates
+//= require ngstorage/ngStorage
 //= require ckeditor-jquery
 //= require_tree ./module
 //= require_tree ./controllers/admin

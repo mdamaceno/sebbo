@@ -9,4 +9,5 @@ asset 'angular-currency-filter'
 asset 'angular-i18n'
 asset 'angular-sanitize'
 asset 'angular-bootstrap'
+asset 'ngstorage'
 # vim: ft=ruby

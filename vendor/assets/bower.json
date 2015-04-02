@@ -10,6 +10,7 @@
     "angular-currency-filter": "latest",
     "angular-i18n": "latest",
     "angular-sanitize": "latest",
-    "angular-bootstrap": "latest"
+    "angular-bootstrap": "latest",
+    "ngstorage": "latest"
   }
 }
