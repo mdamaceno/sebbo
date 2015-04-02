@@ -44,3 +44,18 @@ appClient.directive('fundooRating', function() {
     }
   }
 });
+
+appClient.factory('CartService', function() {
+  var CartCollection = JSON.parse(localStorage.getItem('Cart')) || [];
+
+  this.add = function(item) {
+    if (CartCollection.indexOf(item) === -1) {
+      CartCollection.push(item);
+      localStorage.setItem('Cart', JSON.stringify(CartCollection));
+    }
+  }
+  this.get = function() {
+    return JSON.parse(localStorage.getItem('Cart'));
+  }
+  return this;
+});
