@@ -2,7 +2,7 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.cron '45 * * * *' do
+scheduler.cron '08 * * * *' do
   users = User.select(:id, :email, :encrypted_password).where(role: 1)
 
   if users.size > 0

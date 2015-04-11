@@ -54,9 +54,8 @@ appClient.controller('showClientProductCtrl', ['$scope', '$http', '$localStorage
 
     if (aux != 1) {
       CartService.add(p);
-      p = [];
-      item = [];
     }
+    console.log(p);
   }
 
   $scope.removeFromCart = function(item) {
@@ -82,8 +81,8 @@ appClient.controller('showClientProductCtrl', ['$scope', '$http', '$localStorage
       delete items[auxIndex];
       localStorage.setItem('Cart', JSON.stringify(items));
       aux = 0;
-      auxIndex = undefined;
     }
+    console.log(items);
   };
 
   $scope.buy = function() {
