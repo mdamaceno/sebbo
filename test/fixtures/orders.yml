@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_of_payment: 2015-04-04
+  quantity: 1
+  user_seller_name: MyString
+  user_buyer_name: MyString
+  user_seller_cpf: MyString
+  user_buyer_cpf: MyString
+  payment_method: MyString
+  address: MyString
+  zipcode: MyString
+  state: MyString
+  city: MyString
+  product_id: MyString
+  product_name: MyString
+  product_description: MyText
+  product_price: MyString
+
+two:
+  day_of_payment: 2015-04-04
+  quantity: 1
+  user_seller_name: MyString
+  user_buyer_name: MyString
+  user_seller_cpf: MyString
+  user_buyer_cpf: MyString
+  payment_method: MyString
+  address: MyString
+  zipcode: MyString
+  state: MyString
+  city: MyString
+  product_id: MyString
+  product_name: MyString
+  product_description: MyText
+  product_price: MyString

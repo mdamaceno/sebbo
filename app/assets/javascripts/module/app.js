@@ -1,5 +1,5 @@
 var app = angular.module('adminModule', []);
-var appClient = angular.module('clientModule', ['ngSanitize']);
+var appClient = angular.module('clientModule', ['ngSanitize', 'ngStorage']);
 
 appClient.directive('fundooRating', function() {
   return {
@@ -56,6 +56,27 @@ appClient.factory('CartService', function() {
   }
   this.get = function() {
     return JSON.parse(localStorage.getItem('Cart'));
+  }
+  this.remove = function(item) {
+    var items = this.get();
+
+    console.log(item);
+    console.log(items);
+
+    var p = items;
+
+    // for (var i = 0; i < p.length; i++) {
+    //   if (p[i].id == item.id) {
+    //     console.log(p[i].id);
+    //     p.splice(i, 1);
+    //   }
+    // }
+
+    if (item.id in p) {
+      delete(item.id);
+    }
+
+    localStorage.setItem('Cart', JSON.stringify(p));
   }
   return this;
 });

@@ -5,7 +5,7 @@ development:
   database: sebbo_development
   pool: 5
   username: root
-  password: emiolo123456
+  password: marco
   host: localhost
 
 test:
@@ -15,6 +15,6 @@ test:
   database: sebbo_test
   pool: 5
   username: root
-  password: emiolo123456
+  password: marco
   host: localhost
 

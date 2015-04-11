@@ -9,12 +9,16 @@ Rails.application.routes.draw do
     resources :users
     resources :categories
     resources :products
+    resources :orders
   end
 
   with_options only: [:index, :show] do |for_users|
     for_users.resources :pages
     for_users.resources :products
   end
+
+  resources :orders
+  resources :product_orders
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Título</td>
+      <td>Quantidade</td>
+      <td>Valor Unit.</td>
+      <td>Total</td>
+      <td>Adicionado em</td>
+      <td width="30"></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_orders.each do |porder| %>
+      <tr>
+        <td><%= porder.product_name %></td>
+        <td><%= porder.product_quantity %></td>
+        <td><%= porder.product_price %></td>
+        <td><%= porder.product_price * porder.product_quantity %></td>
+        <td><%= porder.created_at %></td>
+        <td><%= link_to "Remover", product_order_path(porder), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Deseja realmente remover este produto?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Fazer pedido", new_order_path, class: 'btn btn-lg btn-success' %>

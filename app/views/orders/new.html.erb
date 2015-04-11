@@ -1,0 +1,32 @@
+<h2>Produtos do pedido</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Título</td>
+      <td>Quantidade</td>
+      <td>Valor Unit.</td>
+      <td>Total</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_orders.each do |porder| %>
+      <tr>
+        <td><%= porder.product_name %></td>
+        <td><%= porder.product_quantity %></td>
+        <td><%= porder.product_price %></td>
+        <td><%= porder.product_price * porder.product_quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>Valor total do pedido: R$ 100,00</p>
+
+<hr/>
+
+<h2>Endereço de entrega</h2>
+
+<p><%= "#{ @address.field1 }, #{ @address.field2 }, #{ @address.field3 }, #{ @address.field4 } - #{ @address.city } - #{ @address.state } - CEP #{ @address.zipcode }" %></p>
+
+<%= render 'form' %>
